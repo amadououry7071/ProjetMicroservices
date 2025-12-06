@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="header" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);">
+    <div class="logo">🚫</div>
+    <h1>Réservation annulée</h1>
+</div>
+<div class="content">
+    <h2>Bonjour {{ recipient_name }},</h2>
+    
+    <p>Nous vous informons qu'une réservation a été <strong>annulée</strong>.</p>
+    
+    <div class="info-box">
+        <div class="info-row">
+            <span class="info-label">Propriété</span>
+            <span class="info-value">{{ property_title }}</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Dates</span>
+            <span class="info-value">{{ start_date }} - {{ end_date }}</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Annulée par</span>
+            <span class="info-value">{{ cancelled_by }}</span>
+        </div>
+    </div>
+    
+    <p>Si vous avez des questions concernant cette annulation, n'hésitez pas à nous contacter.</p>
+    
+    <center>
+        <a href="{{ frontend_url }}/reservations" class="btn" style="background: #F59E0B;">Voir mes réservations</a>
+    </center>
+</div>
+{% endblock %}

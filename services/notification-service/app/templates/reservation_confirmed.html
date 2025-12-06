@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="header" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
+    <div class="logo">✅</div>
+    <h1>Réservation confirmée !</h1>
+</div>
+<div class="content">
+    <h2>Félicitations {{ tenant_name }} ! 🎉</h2>
+    
+    <p>Votre réservation a été <strong>confirmée</strong> par le propriétaire.</p>
+    
+    <div class="info-box">
+        <div class="info-row">
+            <span class="info-label">Propriété</span>
+            <span class="info-value">{{ property_title }}</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Adresse</span>
+            <span class="info-value">{{ property_address }}</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Arrivée</span>
+            <span class="info-value">{{ start_date }}</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Départ</span>
+            <span class="info-value">{{ end_date }}</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Total</span>
+            <span class="info-value">{{ "%.2f"|format(total_price) }} $ CAD</span>
+        </div>
+    </div>
+    
+    <p>Préparez vos valises et profitez de votre séjour ! 🧳</p>
+    
+    <center>
+        <a href="{{ frontend_url }}/reservations" class="btn" style="background: #10B981;">Voir ma réservation</a>
+    </center>
+    
+    <p><em>En cas de question, contactez le propriétaire via la plateforme.</em></p>
+</div>
+{% endblock %}

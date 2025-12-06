@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="header">
+    <div class="logo">📅</div>
+    <h1>Nouvelle demande de réservation</h1>
+</div>
+<div class="content">
+    <h2>Bonjour {{ owner_name }} 👋</h2>
+    
+    <p>Vous avez reçu une nouvelle demande de réservation !</p>
+    
+    <div class="info-box">
+        <div class="info-row">
+            <span class="info-label">Propriété</span>
+            <span class="info-value">{{ property_title }}</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Locataire</span>
+            <span class="info-value">{{ tenant_name }}</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Arrivée</span>
+            <span class="info-value">{{ start_date }}</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Départ</span>
+            <span class="info-value">{{ end_date }}</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Total</span>
+            <span class="info-value">{{ "%.2f"|format(total_price) }} $ CAD</span>
+        </div>
+    </div>
+    
+    <p>Veuillez vous connecter pour accepter ou refuser cette demande.</p>
+    
+    <center>
+        <a href="{{ frontend_url }}/reservations" class="btn">Voir la demande</a>
+    </center>
+    
+    <p><em>⏰ N'oubliez pas de répondre rapidement pour offrir une bonne expérience au locataire.</em></p>
+</div>
+{% endblock %}

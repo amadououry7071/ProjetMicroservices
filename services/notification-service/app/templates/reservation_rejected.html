@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="header" style="background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);">
+    <div class="logo">❌</div>
+    <h1>Réservation refusée</h1>
+</div>
+<div class="content">
+    <h2>Bonjour {{ tenant_name }},</h2>
+    
+    <p>Nous sommes désolés de vous informer que votre demande de réservation a été <strong>refusée</strong> par le propriétaire.</p>
+    
+    <div class="info-box">
+        <div class="info-row">
+            <span class="info-label">Propriété</span>
+            <span class="info-value">{{ property_title }}</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Dates demandées</span>
+            <span class="info-value">{{ start_date }} - {{ end_date }}</span>
+        </div>
+    </div>
+    
+    {% if rejection_reason %}
+    <div class="reason-box">
+        <strong>📝 Raison du propriétaire :</strong>
+        <p style="margin: 10px 0 0 0;">{{ rejection_reason }}</p>
+    </div>
+    {% endif %}
+    
+    <p>Ne vous découragez pas ! De nombreux autres logements sont disponibles sur LocaHome.</p>
+    
+    <center>
+        <a href="{{ frontend_url }}" class="btn">Explorer d'autres logements</a>
+    </center>
+    
+    <p>Nous espérons vous aider à trouver le logement idéal très bientôt ! 🏠</p>
+</div>
+{% endblock %}

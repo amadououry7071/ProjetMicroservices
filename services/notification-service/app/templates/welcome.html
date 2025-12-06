@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="header">
+    <div class="logo">🏠</div>
+    <h1>Bienvenue sur LocaHome !</h1>
+</div>
+<div class="content">
+    <h2>Bonjour {{ first_name }} 👋</h2>
+    
+    <p>Nous sommes ravis de vous accueillir sur <strong>LocaHome</strong> !</p>
+    
+    <p>Votre compte <strong>{{ role }}</strong> a été créé avec succès.</p>
+    
+    {% if role == "propriétaire" %}
+    <p>En tant que propriétaire, vous pouvez désormais :</p>
+    <ul>
+        <li>📝 Publier vos propriétés</li>
+        <li>📅 Gérer les demandes de réservation</li>
+        <li>💬 Communiquer avec vos locataires</li>
+    </ul>
+    {% else %}
+    <p>En tant que locataire, vous pouvez désormais :</p>
+    <ul>
+        <li>🔍 Explorer des centaines de logements</li>
+        <li>📅 Réserver en quelques clics</li>
+        <li>⭐ Laisser des avis</li>
+    </ul>
+    {% endif %}
+    
+    <center>
+        <a href="{{ frontend_url }}" class="btn">Commencer à explorer</a>
+    </center>
+    
+    <p>Si vous avez des questions, n'hésitez pas à nous contacter.</p>
+    
+    <p>À bientôt sur LocaHome ! 🍁</p>
+</div>
+{% endblock %}
