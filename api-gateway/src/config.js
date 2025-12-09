@@ -9,6 +9,7 @@ const PROPERTY_SERVICE_URL = process.env.PROPERTY_SERVICE_URL || 'http://localho
 const RESERVATION_SERVICE_URL = process.env.RESERVATION_SERVICE_URL || 'http://localhost:3003';
 const REVIEW_SERVICE_URL = process.env.REVIEW_SERVICE_URL || 'http://localhost:3005';
 const ADMIN_SERVICE_URL = process.env.ADMIN_SERVICE_URL || 'http://localhost:3006';
+const CHATBOT_SERVICE_URL = process.env.CHATBOT_SERVICE_URL || 'http://localhost:8001';
 
 module.exports = {
   PORT,
@@ -17,4 +18,5 @@ module.exports = {
   RESERVATION_SERVICE_URL,
   REVIEW_SERVICE_URL,
   ADMIN_SERVICE_URL,
+  CHATBOT_SERVICE_URL,
 };

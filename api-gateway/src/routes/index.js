@@ -6,6 +6,7 @@ const {
   RESERVATION_SERVICE_URL,
   REVIEW_SERVICE_URL,
   ADMIN_SERVICE_URL,
+  CHATBOT_SERVICE_URL,
 } = require('../config');
 
 const router = express.Router();
@@ -39,6 +40,12 @@ router.use(
     ...proxyOptions,
     target: AUTH_SERVICE_URL,
     pathRewrite: { '^/api/auth': '/api/auth' },
+    onError: (err, req, res) => {
+      console.error('Auth service proxy error:', err.message);
+      if (!res.headersSent) {
+        res.status(503).json({ message: 'Service Indisponible pour le moment' });
+      }
+    },
   })
 );
 
@@ -79,6 +86,16 @@ router.use(
     ...proxyOptions,
     target: ADMIN_SERVICE_URL,
     pathRewrite: { '^/api/admin': '/api/admin' },
+  })
+);
+
+// Proxy Chatbot Service
+router.use(
+  '/chat',
+  createProxyMiddleware({
+    ...proxyOptions,
+    target: CHATBOT_SERVICE_URL,
+    pathRewrite: { '^/api/chat': '/api/chat' },
   })
 );
 

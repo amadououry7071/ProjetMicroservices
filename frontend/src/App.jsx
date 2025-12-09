@@ -11,6 +11,7 @@ import CreateProperty from './pages/CreateProperty';
 import EditProperty from './pages/EditProperty';
 import Profile from './pages/Profile';
 import ProtectedRoute from './components/ProtectedRoute';
+import Chatbot from './components/Chatbot';
 
 // Admin pages
 import AdminDashboard from './pages/admin/AdminDashboard';
@@ -124,6 +125,7 @@ function App() {
               />
             </Routes>
           </main>
+          <Chatbot />
         </div>
       </Router>
     </AuthProvider>

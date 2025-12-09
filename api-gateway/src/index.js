@@ -8,7 +8,7 @@ const app = express();
 
 // CORS doit être avant tout
 app.use(cors({
-  origin: ['http://localhost:3005', 'http://127.0.0.1:3005'],
+  origin: ['http://localhost:5173', 'http://127.0.0.1:5173', 'http://localhost:3005', 'http://127.0.0.1:3005'],
   credentials: true,
 }));
 app.use(morgan('dev'));

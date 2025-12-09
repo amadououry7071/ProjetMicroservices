@@ -13,6 +13,7 @@ Architecture microservices pour une plateforme de réservation de propriétés.
 | **review-service** | 3004 | Gestion des avis |
 | **admin-service** | 3005 | Administration et logs |
 | **notification-service** | 8000 | Envoi d'emails (Python/FastAPI) |
+| **chatbot-service** | 8001 | Assistant de réservation (Python/FastAPI) |
 | **frontend** | 5173 | Interface utilisateur React |
 
 ## Technologies
