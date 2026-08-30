@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://REMPLACER-PAR-URL-API-GATEWAY.onrender.com/api/:path*"
+      "destination": "https://api-gateway-h64x.onrender.com/api/:path*"
     }
   ]
 }
